@@ -58,7 +58,14 @@
 
     &__text {
       width: 100%;
-      max-width: 900px;
+
+      @media (min-width: $desktop) {
+        max-width: 500px;
+      }
+
+      @media (min-width: $widescreen) {
+        max-width: 900px;
+      }
 
       &__link {
         color: inherit;
