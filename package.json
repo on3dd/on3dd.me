@@ -5,15 +5,26 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:client": "vue-cli-service build",
+    "build:server": "cross-env NODE_ENV=production WEBPACK_TARGET=node vue-cli-service build",
+    "build:win": "npm run build:server && move dist\\vue-ssr-server-bundle.json bundle && npm run build:client && move bundle dist\\vue-ssr-server-bundle.json && cross-env WEBPACK_TARGET=node NODE_ENV=production node ./server/ssr.js",
+    "build:mac": "npm run build:server && mv dist/vue-ssr-server-bundle.json bundle && npm run build:client && mv bundle dist/vue-ssr-server-bundle.json",
+    "start": "cross-env NODE_ENV=production node ./server/ssr.js",
+    "lint": "vue-cli-service lint",
+    "dev:serve": "cross-env WEBPACK_TARGET=node node ./server/ssr.js",
+    "dev": "concurrently \"npm run serve\" \"npm run dev:serve\" "
   },
   "dependencies": {
     "buefy": "^0.8.15",
     "core-js": "^3.6.4",
+    "koa-router": "^8.0.8",
+    "lodash.merge": "^4.6.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.1",
-    "vue-router": "^3.1.6"
+    "vue-router": "^3.1.6",
+    "vue-server-renderer": "^2.6.11",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.26.0",
@@ -24,11 +35,20 @@
     "@vue/cli-plugin-typescript": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-typescript": "^5.0.2",
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "koa": "^2.11.0",
+    "koa-mount": "^4.0.0",
+    "koa-send": "^5.0.0",
+    "koa-static": "^5.0.0",
+    "memory-fs": "^0.5.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "typescript": "~3.8.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   }
 }
