@@ -10,8 +10,8 @@ const start = spawn(npm, ["run", "start"]);
 // const serve = spawn(npx, ["vue-cli-service", "serve"]);
 const log = console.log;
 const errAndExit = err => {
-    console.log("err", err);
-    process.exit(1);
+  console.log("err", err);
+  process.exit(1);
 };
 
 // serve.on("data", log);

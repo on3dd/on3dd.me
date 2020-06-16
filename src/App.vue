@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="header">
-      <Navbar/>
+      <TheNavbar/>
     </header>
     <main class="main">
       <router-view/>
@@ -11,11 +11,11 @@
 
 <script lang="ts">
   import {Component, Vue} from "vue-property-decorator";
-  import Navbar from "@/components/Navbar.vue";
+  import TheNavbar from "@/components/TheNavbar.vue";
 
   @Component({
     components: {
-      Navbar,
+      TheNavbar,
     }
   })
   export default class App extends Vue {}

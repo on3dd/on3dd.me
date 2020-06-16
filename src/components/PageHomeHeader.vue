@@ -2,10 +2,7 @@
   <div class="home__header">
     <div class="home__header__image">
       <figure class="image is-square">
-        <img
-            class="is-rounded"
-            src="../assets/avatar.png"
-        >
+        <img class="avatar is-rounded" src="../assets/avatar.png" draggable="false" />
       </figure>
     </div>
     <div class="home__header__name">
@@ -16,39 +13,54 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator";
+	import { Component, Vue } from 'vue-property-decorator';
 
-  @Component
-  export default class PageHomeHeader extends Vue {}
+	@Component
+	export default class PageHomeHeader extends Vue {}
 </script>
 
 <style scoped lang="scss">
-  @import "~bulma/sass/utilities/initial-variables";
+	@import '~bulma/sass/utilities/initial-variables';
+	@import '../scss/unselectable.scss';
 
-  .home__header {
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    margin-bottom: 2rem;
+	.home__header {
+		display: flex;
+		align-items: center;
+		align-self: flex-start;
+		margin-bottom: 2rem;
 
-    @media (max-width: $tablet) {
-      justify-content: center;
-    }
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
 
-    &__name {
-      display: inline-flex;
-      flex-direction: column;
+		&__name {
+			display: inline-flex;
+			flex-direction: column;
 
-      h1,
-      h2 {
-        vertical-align: text-top;
-      }
-    }
+			h1,
+			h2 {
+				vertical-align: text-top;
+			}
+		}
 
-    &__image {
-      margin-right: 1rem;
-      width: 100%;
-      max-width: 128px;
-    }
-  }
+		&__image {
+			@include unselectable;
+
+			margin-right: 1.5rem;
+			width: 100%;
+			max-width: 128px;
+
+			// &::before {
+			// 	content: "";
+			// 	position: absolute;
+			// 	top: -7px;
+			// 	left: -9px;
+			// 	height: 146px;
+			// 	width: 146px;
+			// 	border: 4px solid $blue;
+			// 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			// 	border-radius: 50%;
+			// }
+		}
+	}
 </style>
