@@ -21,6 +21,8 @@
 	@import '@/scss/unselectable';
 
 	h1 {
-		@include unselectable;
+    @include unselectable;
+
+    margin-bottom: 1rem;
 	}
 </style>

@@ -4,7 +4,9 @@
       <BaseNavbar />
     </header>
     <main class="main">
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </main>
   </div>
 </template>
@@ -29,9 +31,17 @@
 
 	.main {
 		margin-top: 1rem;
-  }
+	}
 
 	.main-content {
 		padding: 2rem;
+	}
+
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.5s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		opacity: 0;
 	}
 </style>

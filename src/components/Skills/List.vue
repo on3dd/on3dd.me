@@ -30,7 +30,7 @@
 			},
 			{
 				name: 'Go',
-				amount: 60,
+				amount: 55,
 			},
 			{
 				name: 'Node.js',
@@ -38,7 +38,7 @@
 			},
 			{
 				name: 'SQL',
-				amount: 50,
+				amount: 45,
 			},
 			{
 				name: 'NoSQL',
@@ -46,11 +46,11 @@
 			},
 			{
 				name: 'GraphQL',
-				amount: 30,
+				amount: 35,
 			},
 			{
 				name: 'Docker',
-				amount: 20,
+				amount: 30,
 			},
 		];
 	}
