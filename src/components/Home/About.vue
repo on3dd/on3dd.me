@@ -32,7 +32,7 @@
 	import Route from '@/types/route';
 
 	@Component
-	export default class PageHomeAbout extends Vue {
+	export default class HomeAbout extends Vue {
 		private readonly routes: Route[] = [
 			{ to: 'https://github.com/on3dd', name: 'github' },
 			{ to: 'https://t.me/on3dd', name: 'telegram' },
@@ -46,7 +46,7 @@
 
 <style scoped lang="scss">
 	@import '~bulma/sass/utilities/initial-variables';
-	@import '../scss/unselectable.scss';
+	@import '@/scss/unselectable.scss';
 
 	.home__about {
 		@media (max-width: $tablet) {

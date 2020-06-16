@@ -2,7 +2,7 @@
   <div class="home__header">
     <div class="home__header__image">
       <figure class="image is-square">
-        <img class="avatar is-rounded" src="../assets/avatar.png" draggable="false" />
+        <img class="avatar is-rounded" src="@/assets/avatar.png" draggable="false" />
       </figure>
     </div>
     <div class="home__header__name">
@@ -16,12 +16,12 @@
 	import { Component, Vue } from 'vue-property-decorator';
 
 	@Component
-	export default class PageHomeHeader extends Vue {}
+	export default class HomeHeader extends Vue {}
 </script>
 
 <style scoped lang="scss">
 	@import '~bulma/sass/utilities/initial-variables';
-	@import '../scss/unselectable.scss';
+	@import '@/scss/unselectable.scss';
 
 	.home__header {
 		display: flex;

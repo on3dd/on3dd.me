@@ -1,16 +1,16 @@
 <template>
   <section class="main-content">
-    <PageHome />
+    <PageSkills />
   </section>
 </template>
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
-	import PageHome from '@/components/Home/Index.vue';
+	import PageSkills from '@/components/Skills/Index.vue';
 
 	@Component({
 		components: {
-			PageHome,
+			PageSkills,
 		},
 	})
 	export default class Home extends Vue {}

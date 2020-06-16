@@ -1,35 +1,37 @@
 <template>
   <div id="app">
     <header class="header">
-      <TheNavbar/>
+      <BaseNavbar />
     </header>
     <main class="main">
-      <router-view/>
+      <router-view />
     </main>
   </div>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator";
-  import TheNavbar from "@/components/TheNavbar.vue";
+	import { Component, Vue } from 'vue-property-decorator';
+	import BaseNavbar from '@/components/BaseUI/BaseNavbar.vue';
 
-  @Component({
-    components: {
-      TheNavbar,
-    }
-  })
-  export default class App extends Vue {}
+	@Component({
+		components: {
+			BaseNavbar,
+		},
+	})
+	export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-  /* Prevent bulma scroll style */
-  html {
-    overflow-y: auto !important;
+	/* Prevent bulma scroll style */
+	html {
+		overflow-y: auto !important;
+	}
+
+	.main {
+		margin-top: 1rem;
   }
 
-  #app {
-    .main {
-      margin-top: 1rem;
-    }
-  }
+	.main-content {
+		padding: 2rem;
+	}
 </style>

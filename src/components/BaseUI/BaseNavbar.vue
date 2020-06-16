@@ -23,9 +23,9 @@
 	export default class Navbar extends Vue {
 		private readonly routes: Route[] = [
 			{ to: '/home', name: 'home' },
-			{ to: '/bio', name: 'bio', disabled: true },
-			{ to: '/skills', name: 'skills', disabled: true },
-			{ to: '/projects', name: 'projects', disabled: true },
+			// { to: '/bio', name: 'bio', disabled: true },
+			{ to: '/skills', name: 'skills'},
+      { to: '/projects', name: 'projects', disabled: true },
 			// { to: "/blog", name: "blog", disabled: true }
 		];
 	}
