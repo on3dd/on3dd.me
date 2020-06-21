@@ -24,9 +24,17 @@
 </script>
 
 <style lang="scss">
-	/* Prevent bulma scroll style */
-	html {
-		overflow-y: auto !important;
+	#app {
+		animation: 0.5s onload ease-out;
+	}
+
+	@keyframes onload {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
 
 	.main {
@@ -35,13 +43,5 @@
 
 	.main-content {
 		padding: 2rem;
-	}
-
-	.fade-enter-active,
-	.fade-leave-active {
-		transition: opacity 0.5s;
-	}
-	.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
-		opacity: 0;
 	}
 </style>

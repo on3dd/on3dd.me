@@ -2,7 +2,7 @@
   <div class="container home__about">
     <p
       class="is-size-4 is-size-4-desktop home__about__text"
-    >Mathematics and Computer Science student, Front-end web developer, JS & TS fan.</p>
+    >Mathematics and Computer Science student, Full stack web developer, JS & TS fan.</p>
     <p class="is-size-4 is-size-4-desktop home__about__text has-text-grey">
       <b-icon icon="map-marker" size="is-small" class="home__about__text__icon" />
       <a

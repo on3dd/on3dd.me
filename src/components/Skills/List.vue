@@ -21,6 +21,10 @@
 				amount: 90,
 			},
 			{
+				name: 'Vue',
+				amount: 85,
+			},
+			{
 				name: 'JavaScript',
 				amount: 80,
 			},
@@ -49,8 +53,12 @@
 				amount: 35,
 			},
 			{
-				name: 'Docker',
+				name: 'RabbitMQ',
 				amount: 30,
+      },
+      {
+				name: 'Docker',
+				amount: 25,
 			},
 		];
 	}
