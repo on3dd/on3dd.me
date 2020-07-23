@@ -13,14 +13,23 @@
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
+	import { Getter } from 'vuex-class';
 	import BaseNavbar from '@/components/BaseUI/BaseNavbar.vue';
+	import Theme from '@/types/theme';
+	import switchTheme from '@/shared/switchTheme';
 
 	@Component({
 		components: {
 			BaseNavbar,
 		},
 	})
-	export default class App extends Vue {}
+	export default class App extends Vue {
+		@Getter theme!: Theme;
+
+		private mounted() {
+			if (this.theme) switchTheme(this.theme);
+		}
+	}
 </script>
 
 <style lang="scss">

@@ -22,11 +22,14 @@
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
+	import { Action, Getter } from 'vuex-class';
+	import switchTheme from '@/shared/switchTheme';
+	import Theme from '@/types/theme';
 	import Route from '@/types/route';
 
 	@Component
 	export default class Navbar extends Vue {
-		private theme = 'light';
+		@Getter theme!: Theme;
 
 		private readonly routes: Route[] = [
 			{ to: '/home', name: 'home' },
@@ -36,13 +39,15 @@
 			// { to: "/blog", name: "blog", disabled: true }
 		];
 
-		private get currentTheme() {
+		@Action changeTheme!: (val: Theme) => void;
+
+		private get currentTheme(): Theme {
 			return this.theme;
 		}
 
-		private set currentTheme(val: string) {
-			this.theme = val;
-			document.documentElement.setAttribute('data-theme', val);
+		private set currentTheme(val: Theme) {
+			this.changeTheme(val);
+			switchTheme(val);
 		}
 	}
 </script>

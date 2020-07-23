@@ -2,7 +2,7 @@ import { createApp } from './main';
 
 export default context => {
   return new Promise((resolve, reject) => {
-    const { app, router } = createApp();
+    const { app, router, store } = createApp();
 
     router.push(context.url);
 
@@ -16,11 +16,14 @@ export default context => {
         matchedComponents.map(component => {
           if (component.asyncData) {
             return component.asyncData({
+              store,
               route: router.currentRoute,
             });
           }
         }),
-      );
+      ).then(() => {
+        context.state = store.state;
+      });
       resolve(app);
     }, reject);
   });
