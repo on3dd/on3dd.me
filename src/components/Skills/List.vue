@@ -31,13 +31,13 @@
 			{
 				name: 'TypeScript',
 				amount: 70,
+      },
+      {
+				name: 'Node.js',
+				amount: 60,
 			},
 			{
 				name: 'Go',
-				amount: 55,
-			},
-			{
-				name: 'Node.js',
 				amount: 50,
 			},
 			{

@@ -6,7 +6,7 @@
       </figure>
     </div>
     <div class="home__header__name">
-      <h1 class="is-size-2 is-size-1-desktop has-text-black has-text-weight-bold">Artyom</h1>
+      <h1 class="is-size-2 is-size-1-desktop has-text-weight-bold">Artyom</h1>
       <h2 class="is-size-3 is-size-2-desktop has-text-weight-semibold">@on3dd</h2>
     </div>
   </div>
@@ -41,6 +41,14 @@
 			h2 {
 				vertical-align: text-top;
 			}
+
+			h1 {
+				color: var(--heading-color);
+			}
+
+			h2 {
+				color: var(--sub-heading-color);
+			}
 		}
 
 		&__image {
@@ -49,18 +57,6 @@
 			margin-right: 1.5rem;
 			width: 100%;
 			max-width: 128px;
-
-			// &::before {
-			// 	content: "";
-			// 	position: absolute;
-			// 	top: -7px;
-			// 	left: -9px;
-			// 	height: 146px;
-			// 	width: 146px;
-			// 	border: 4px solid $blue;
-			// 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-			// 	border-radius: 50%;
-			// }
 		}
 	}
 </style>

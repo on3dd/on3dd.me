@@ -1,9 +1,9 @@
 <template>
   <div class="container home__about">
     <p
-      class="is-size-4 is-size-4-desktop home__about__text"
+      class="is-size-4 is-size-4-desktop home__about__text-trivia"
     >Mathematics and Computer Science student, Full stack web developer, JS & TS fan.</p>
-    <p class="is-size-4 is-size-4-desktop home__about__text has-text-grey">
+    <p class="is-size-4 is-size-4-desktop home__about__text-geo">
       <b-icon icon="map-marker" size="is-small" class="home__about__text__icon" />
       <a
         href="https://goo.gl/maps/JpvL1DgcvtoV69t76"
@@ -69,7 +69,7 @@
 				display: inline-block;
 
 				&:hover {
-					color: $blue;
+					color: var(--primary-color);
 					text-decoration: underline;
 				}
 			}
@@ -77,6 +77,14 @@
 			&__icon {
 				color: inherit;
 				margin-right: 0.25rem;
+			}
+
+			&-trivia {
+				color: var(--font-color);
+			}
+
+			&-geo {
+				color: var(--font-color-secondary);
 			}
 		}
 
@@ -98,6 +106,13 @@
 
 			&__button {
 				margin-bottom: 0.5rem;
+				color: var(--font-color);
+				background-color: var(--bg-color);
+				border-color: var(--border-color);
+
+				&:hover {
+					background-color: var(--link-bg-color-hover);
+				}
 
 				@media (min-width: $tablet) {
 					margin-right: 0.5rem;

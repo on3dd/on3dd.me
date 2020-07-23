@@ -24,6 +24,8 @@
 </script>
 
 <style lang="scss">
+	@import './scss/main.scss';
+
 	#app {
 		animation: 0.5s onload ease-out;
 	}

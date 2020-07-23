@@ -1,6 +1,13 @@
+@import './themes.scss';
 /* Prevent bulma scroll style */
 html {
   overflow-y: auto !important;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
 }
 
 .fade-enter-active,

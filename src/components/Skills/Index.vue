@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="is-size-2 is-size-1-desktop has-text-black has-text-weight-bold">Skills</h1>
+    <h1 class="is-size-2 is-size-1-desktop has-text-weight-bold">Skills</h1>
     <SkillsList />
   </div>
 </template>
@@ -21,8 +21,9 @@
 	@import '@/scss/unselectable';
 
 	h1 {
-    @include unselectable;
+		@include unselectable;
 
-    margin-bottom: 1rem;
+		margin-bottom: 1rem;
+		color: var(--heading-color);
 	}
 </style>

@@ -1,0 +1,31 @@
+@import '~bulma/sass/utilities/initial-variables';
+
+:root {
+  --primary-color: hsl(217, 71%, 53%);
+  --secondary-color: hsl(217, 71%, 43%);
+  --font-color: hsl(0, 0%, 21%);
+  --font-color-secondary: hsl(0, 0%, 48%);
+  --bg-color: hsl(0, 0%, 100%);
+  --link-bg-color-hover: hsl(0, 0%, 98%);
+  --active-link-bg-color: hsl(0, 0%, 96%);
+  --active-link-bg-color-hover: hsl(0, 0%, 94%);
+  --heading-color: hsl(0, 0%, 4%);
+  --sub-heading-color: hsl(0, 0%, 29%);
+  --border-color: hsl(0, 0%, 75%);
+  --progress-color: hsl(0, 0%, 90%);
+}
+
+[data-theme='dark'] {
+  --primary-color: hsl(242, 79%, 77%);
+  --secondary-color: hsl(242, 79%, 82%);
+  --font-color: hsl(0, 0%, 96%);
+  --font-color-secondary: hsl(0, 0%, 69%);
+  --bg-color: hsl(240, 25%, 12%);
+  --link-bg-color-hover: hsl(240, 25%, 14%);
+  --active-link-bg-color: hsl(240, 25%, 16%);
+  --active-link-bg-color-hover: hsl(240, 25%, 18%);
+  --heading-color: hsl(0, 0%, 100%);
+  --sub-heading-color: hsl(0, 0%, 88%);
+  --border-color: hsl(0, 0%, 25%);
+  --progress-color: hsl(240, 25%, 15%);
+}

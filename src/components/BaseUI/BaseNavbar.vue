@@ -12,6 +12,11 @@
         :class="{'navbar__item': true, 'navbar__item-disabled': item.disabled}"
       >{{item.name}}</b-navbar-item>
     </template>
+    <template slot="end">
+      <b-navbar-item tag="div" class="field">
+        <b-switch v-model="currentTheme" true-value="dark" false-value="light">{{ currentTheme }}</b-switch>
+      </b-navbar-item>
+    </template>
   </b-navbar>
 </template>
 
@@ -21,13 +26,24 @@
 
 	@Component
 	export default class Navbar extends Vue {
+		private theme = 'light';
+
 		private readonly routes: Route[] = [
 			{ to: '/home', name: 'home' },
 			// { to: '/bio', name: 'bio', disabled: true },
-			{ to: '/skills', name: 'skills'},
-      { to: '/projects', name: 'projects', disabled: true },
+			{ to: '/skills', name: 'skills' },
+			{ to: '/projects', name: 'projects', disabled: true },
 			// { to: "/blog", name: "blog", disabled: true }
 		];
+
+		private get currentTheme() {
+			return this.theme;
+		}
+
+		private set currentTheme(val: string) {
+			this.theme = val;
+			document.documentElement.setAttribute('data-theme', val);
+		}
 	}
 </script>
 
@@ -35,16 +51,21 @@
 	@import '~bulma/sass/utilities/initial-variables';
 
 	.navbar {
-		&__item {
-			color: $blue;
-			text-transform: lowercase;
+		background-color: var(--bg-color);
 
-			&:hover {
-				color: darken($blue, 10%);
+		&__item {
+			color: var(--primary-color);
+			text-transform: lowercase;
+			background-color: var(--bg-color);
+
+			&:hover,
+			&:focus {
+				color: var(--secondary-color);
+				background-color: var(--link-bg-color-hover);
 			}
 
 			&-disabled {
-				color: $grey-darker;
+				color: var(--font-color) !important;
 
 				&:hover {
 					color: inherit;
@@ -61,6 +82,16 @@
 	}
 
 	.router-link-active {
-		background-color: #fafafa;
+		background-color: var(--active-link-bg-color);
+
+		&:hover {
+			background-color: var(--active-link-bg-color-hover);
+		}
+	}
+</style>
+
+<style lang="scss">
+	.navbar-menu {
+		background-color: var(--bg-color);
 	}
 </style>

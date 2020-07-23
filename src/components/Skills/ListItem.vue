@@ -1,6 +1,6 @@
 <template>
   <div class="skills-list__item">
-    <span class="is-size-6 is-size-5-desktop has-text-black">{{item.name}}</span>
+    <span class="is-size-6 is-size-5-desktop">{{item.name}}</span>
     <b-progress :value="item.amount" />
   </div>
 </template>
@@ -25,14 +25,20 @@
 			@include unselectable;
 
 			display: block;
+			margin-bottom: 0.5rem;
+			color: var(--font-color);
 		}
 	}
 </style>
 
 <style lang="scss">
-	@import '~bulma/sass/utilities/initial-variables';
+  @import '~bulma/sass/utilities/initial-variables';
+
+  progress[value]::-webkit-progress-bar {
+		background-color: var(--progress-color);
+	}
 
 	progress[value]::-webkit-progress-value {
-		background-color: $blue;
+		background-color: var(--primary-color);
 	}
 </style>
