@@ -28,6 +28,14 @@ serverCompiler.watch({}, (err, stats) => {
   console.log('new bundle generated');
 });
 
+const renderToString = (context, renderer) => {
+  return new Promise((resolve, reject) => {
+    renderer.renderToString(context, (err, html) => {
+      err ? reject(err) : resolve(html);
+    });
+  });
+};
+
 const handleRequest = async ctx => {
   if (!bundle) {
     ctx.body = '等待webpack打包完成后在访问在访问';
@@ -54,14 +62,6 @@ const handleRequest = async ctx => {
   });
   const html = await renderToString(ctx, renderer);
   ctx.body = html;
-};
-
-const renderToString = (context, renderer) => {
-  return new Promise((resolve, reject) => {
-    renderer.renderToString(context, (err, html) => {
-      err ? reject(err) : resolve(html);
-    });
-  });
 };
 
 const router = new Router();

@@ -6,24 +6,24 @@
 </template>
 
 <script lang="ts">
-	import { Component, Vue } from 'vue-property-decorator';
-	import SkillsList from './List.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import SkillsList from './List.vue';
 
-	@Component({
-		components: {
-			SkillsList,
-		},
-	})
-	export default class SkillsIndex extends Vue {}
+@Component({
+  components: {
+    SkillsList,
+  },
+})
+export default class SkillsIndex extends Vue {}
 </script>
 
 <style scoped lang="scss">
-	@import '@/scss/unselectable';
+@import '@/scss/unselectable';
 
-	h1 {
-		@include unselectable;
+h1 {
+  @include unselectable;
 
-		margin-bottom: 1rem;
-		color: var(--heading-color);
-	}
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
 </style>
