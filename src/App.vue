@@ -15,7 +15,7 @@
 	import { Component, Vue } from 'vue-property-decorator';
 	import { Getter } from 'vuex-class';
 
-	import Theme from '@/types/theme';
+	import { Theme } from '@client';
 	import switchTheme from '@/utils/switchTheme';
 
 	import BaseNavbar from '@/components/BaseUI/BaseNavbar.vue';
