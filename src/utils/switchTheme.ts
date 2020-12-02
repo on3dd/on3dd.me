@@ -1,4 +1,4 @@
-import Theme from '@/types/theme';
+import { Theme } from '@client';
 
 const switchTheme = (val: Theme) =>
   document.documentElement.setAttribute('data-theme', val);

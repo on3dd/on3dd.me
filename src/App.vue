@@ -1,22 +1,24 @@
 <template>
-  <div id="app">
-    <header class="header">
-      <BaseNavbar />
-    </header>
-    <main class="main">
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
-    </main>
-  </div>
+	<div id="app">
+		<header class="header">
+			<BaseNavbar />
+		</header>
+		<main class="main">
+			<transition name="fade" mode="out-in">
+				<router-view />
+			</transition>
+		</main>
+	</div>
 </template>
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
 	import { Getter } from 'vuex-class';
-	import BaseNavbar from '@/components/BaseUI/BaseNavbar.vue';
+
 	import Theme from '@/types/theme';
-	import switchTheme from '@/shared/switchTheme';
+	import switchTheme from '@/utils/switchTheme';
+
+	import BaseNavbar from '@/components/BaseUI/BaseNavbar.vue';
 
 	@Component({
 		components: {

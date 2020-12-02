@@ -1,5 +1,5 @@
 import { Commit } from 'vuex';
-import Theme from '@/types/theme';
+import { Theme } from '@client';
 
 type ThemeState = {
   theme: Theme;

@@ -6,8 +6,10 @@
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
-	import SkillsListItem from './ListItem.vue';
+
 	import { SKILLS } from '@/utils/constants';
+
+	import SkillsListItem from './ListItem.vue';
 
 	@Component({
 		components: {

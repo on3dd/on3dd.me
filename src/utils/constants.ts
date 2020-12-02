@@ -1,4 +1,4 @@
-import Skill from '@/types/skill.ts';
+import { Skill } from '@client';
 
 export const SKILLS: Skill[] = [
   {
