@@ -42,7 +42,7 @@ export default class Navbar extends Vue {
     // { to: '/bio', name: 'bio', disabled: true },
     { to: '/skills', name: 'skills' },
     { to: '/projects', name: 'projects', disabled: true },
-    // { to: "/blog", name: "blog", disabled: true }
+    { to: "/blog", name: "blog", disabled: true }
   ];
 
   @Action changeTheme!: (val: Theme) => void;
@@ -105,6 +105,12 @@ export default class Navbar extends Vue {
 .navbar,
 .navbar-menu {
   background-color: var(--bg-color) !important;
+}
+
+.navbar-item {
+  &:not(:last-child) {
+    margin-right: 1ch;
+  }
 }
 
 .navbar-item .switch {
