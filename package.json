@@ -15,6 +15,10 @@
     "dev": "concurrently \"npm run serve\" \"npm run dev:serve\" "
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@mdi/font": "^5.3.45",
     "buefy": "^0.8.15",
     "core-js": "^3.6.4",

@@ -6,7 +6,7 @@
 		</p>
 		<p class="is-size-4 is-size-4-desktop home__about__text-geo">
 			<b-icon
-				icon="map-marker"
+				icon="map-marker-alt"
 				size="is-small"
 				class="home__about__text__icon"
 			/>
@@ -14,16 +14,17 @@
 				href="https://goo.gl/maps/JpvL1DgcvtoV69t76"
 				title="find on google maps"
 				class="home__about__text__link"
-				>Vladivostok, Russia</a
-			>
+				>Vladivostok, Russia
+			</a>
 		</p>
 		<div class="home__about__buttons">
 			<template v-for="(item, idx) in routes">
 				<b-button
 					:key="idx"
-					:icon-left="item.name"
 					:href="item.to"
 					:title="item.name"
+					:icon-left="iconLeft(item)"
+					:icon-pack="iconPack(item)"
 					tag="a"
 					size="is-medium"
 					class="home__about__buttons__button"
@@ -34,20 +35,24 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
+	import { Component, Vue } from 'vue-property-decorator';
 
 	import { Route } from '@client';
+	import { ROUTES } from '@/utils/constants';
 
 	@Component
 	export default class HomeAbout extends Vue {
-		private readonly routes: Route[] = [
-			{ to: 'https://github.com/on3dd', name: 'github' },
-			{ to: 'https://t.me/on3dd', name: 'telegram' },
-			{ to: 'https://vk.com/on3dd', name: 'vk' },
-			{ to: 'https://twitter.com/on3dd', name: 'twitter' },
-			{ to: 'https://www.pinterest.ru/on3dd/', name: 'pinterest' },
-			{ to: 'mailto:onedeadwave.work@gmai.com', name: 'gmail' },
-		];
+		private get routes() {
+			return ROUTES;
+		}
+
+		private iconLeft(item: Route) {
+			return item.icon || item.name;
+		}
+
+		private iconPack(item: Route) {
+			return item.name === 'mail' ? 'fas' : 'fab';
+		}
 	}
 </script>
 
@@ -83,7 +88,7 @@
 
 			&__icon {
 				color: inherit;
-				margin-right: 0.25rem;
+				margin-right: 0.5ch;
 			}
 
 			&-trivia {

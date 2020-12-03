@@ -1,4 +1,37 @@
-import { Skill } from '@client';
+import { Route, Skill } from '@client';
+
+export const ROUTES: Route[] = [
+  {
+    to: 'https://github.com/on3dd',
+    name: 'github',
+  },
+  {
+    to: 'https://t.me/on3dd',
+    name: 'telegram',
+  },
+  {
+    to: 'https://vk.com/on3dd',
+    name: 'vk',
+  },
+  {
+    to: 'https://twitter.com/on3dd',
+    name: 'twitter',
+  },
+  {
+    to: 'https://www.pinterest.ru/on3dd/',
+    name: 'pinterest',
+  },
+  {
+    to: 'https://www.last.fm/user/one_dead',
+    name: 'last.fm',
+    icon: 'lastfm',
+  },
+  {
+    to: 'mailto:onedeadwave.work@gmai.com',
+    name: 'mail',
+    icon: 'envelope',
+  },
+];
 
 export const SKILLS: Skill[] = [
   {
